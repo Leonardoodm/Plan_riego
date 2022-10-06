@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('principal');
 });
+
+Route::get('/register',[RegisterController::class, 'index'])->name('Register.index');
+Route::get('/login',[SessionsController::class, 'index'])->name('Login.index');
+

@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('principal');
 });
 
-Route::get('/register',[RegisterController::class, 'index'])->name('Register.index');
-Route::get('/login',[SessionsController::class, 'index'])->name('Login.index');
+Route::get('/register',[RegisterController::class, 'index'])->name('Register');
+Route::post('/register',[RegisterController::class, 'store'])->name('Register');
+Route::get('/login',[SessionsController::class, 'index'])->name('Login');
 

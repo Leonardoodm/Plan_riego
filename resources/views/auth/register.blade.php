@@ -75,7 +75,7 @@
                         <input 
                             id="password"                        
                             name="password"
-                            type="text"
+                            type="password"
                             placeholder="Password de Registro"
                             class="border p-3 w-full rounded-lg @error('password') border-red-500   
                             @enderror"
@@ -93,7 +93,7 @@
                         <input 
                             id="password_confirmation"                        
                             name="password_confirmation"
-                            type="text"
+                            type="password"
                             placeholder="Repeat your Password"
                             class="border p-3 w-full rounded-lg @error('password_confirmation') border-red-500   
                             @enderror"

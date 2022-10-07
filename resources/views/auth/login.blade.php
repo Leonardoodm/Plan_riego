@@ -1,32 +1,67 @@
 @extends('layouts.app')
+ @section('titulo')
+ log in en Dev
+ @endsection
 
+@section ('contenido')
+    <div class = "md:flex md:justify-center md:gap-4 items-center">
+        <div class = "md:w-4/12 p-5" >
+            <img src="{{asset('img/Register.png')}}" alt="Imagen login de usuarios">
 
-@section('titulo')
-    principal
-@endsection
-
-@section('contenido')
-<div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200
-rounded-lg shadow-lg">
-    <h1 class="text-3xl text-center font-bold">Login</h1>
-
-    <form class="mt-4" method="POST" action="{{route('Login')}}">
-        <input type="email" class="border border-gray-200 rounded-b-md bg-gray-200
-        w-full text-lg placeholderbg-gray-900 p-2 my-2 focus:bg-white placeholder="Email"
-        id="email" name="email">
-
-        
-        <input type="password" class="border border-gray-200 rounded-b-md bg-gray-200
-        w-full text-lg placeholderbg-gray-900 p-2 my-2 focus:bg-white placeholder="Password"
-        id="password" name="password">
-
-        <p class="border border-red-500 rounded-md bg-red-100 w-full
-        text-red-600 p-2 my-2">
-        </p>
-        
-        <button type="submit" class="rounded-md bg-red-600 w-full text-lg text-white font-semibold
-        p-2 my-3 hover:bg-red-900">send</button>
-    </form>
-
-</div>
+        </div >
+            
+        <div class = "md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
+            <form  novalidate>
+                @csrf
+                   
+                    <div class="mb-5">
+                        <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">
+                            Email 
+                        </label>
+                        <input 
+                            id="email"                        
+                            name="email"
+                            type="text"
+                            placeholder="Tu Email de Registro"
+                            class="border p-3 w-full rounded-lg @error('email') border-red-500   
+                            @enderror"
+                            value="{{old('email')}}"
+                            />
+                            @error('email')
+                                <p class="bg-red-500 text-white my-2
+                                 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                            @enderror
+                    </div>
+                    <div class="mb-5">
+                        <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">
+                            Password 
+                        </label>
+                        <input 
+                            id="password"                        
+                            name="password"
+                            type="password"
+                            placeholder="Password de Registro"
+                            class="border p-3 w-full rounded-lg @error('password') border-red-500   
+                            @enderror"
+                            value="{{old('password')}}"
+                            />
+                            @error('password')
+                                <p class="bg-red-500 text-white my-2
+                                 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                            @enderror
+                    </div>
+                    <div class="mb-5">
+                        <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">
+                            Repeat Password 
+                        </label>
+                      
+                    <input 
+                    type="submit"
+                    value="log in"   
+                    class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
+                    uppercase font-bold w-full p-3 text-white rounded-lg"   
+                    />
+                </form>
+            </div>
+        </div>      
 @endsection

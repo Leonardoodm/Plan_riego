@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\RegisterController;
@@ -23,4 +24,6 @@ Route::get('/', function () {
 Route::get('/register',[RegisterController::class, 'index'])->name('Register');
 Route::post('/register',[RegisterController::class, 'store'])->name('Register');
 Route::get('/login',[SessionsController::class, 'index'])->name('Login');
+
+Route::get('/Inicio',[PostController::class , 'index'])->name('posts.index');
 

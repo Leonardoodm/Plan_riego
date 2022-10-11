@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,10 @@ Route::get('/', function () {
 
 Route::get('/register',[RegisterController::class, 'index'])->name('Register');
 Route::post('/register',[RegisterController::class, 'store'])->name('Register');
-Route::get('/login',[SessionsController::class, 'index'])->name('Login');
+
+Route::get('/login',[SessionsController::class, 'index'])->name('login');
+Route::post('/login',[SessionsController::class, 'store'])->name('login');
+Route::post('/logout',[LogoutController::class, 'store'])->name('logout');
 
 Route::get('/Inicio',[PostController::class , 'index'])->name('posts.index');
 

@@ -6,13 +6,22 @@
 @section ('contenido')
     <div class = "md:flex md:justify-center md:gap-4 items-center">
         <div class = "md:w-4/12 p-5" >
-            <img src="{{asset('img/Register.png')}}" alt="Imagen login de usuarios">
+            <img src="{{asset('img/Login.png')}}" alt="Imagen login de usuarios">
 
         </div >
             
         <div class = "md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
-            <form  novalidate>
+            <form method="POST" action="{{ route('login') }}" novalidate>
                 @csrf
+
+                @if (session('mensaje'))
+                    <p class="bg-red-500 text-white my-2
+                    rounded-lg text-sm p-2 text-center">
+                        {{ session('mensaje')}}
+                    </p>
+                
+                    
+                @endif
                    
                     <div class="mb-5">
                         <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">
@@ -50,10 +59,10 @@
                                  rounded-lg text-sm p-2 text-center">{{$message}}</p>
                             @enderror
                     </div>
-                    <div class="mb-5">
-                        <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">
-                            Repeat Password 
-                        </label>
+
+                        <div class="mb-5">
+                            <input type="checkbox" name="remember"> <label for="" class="text-gray-500 text-sm"> Mantener mi sesion abierta </label>
+                        </div>
                       
                     <input 
                     type="submit"

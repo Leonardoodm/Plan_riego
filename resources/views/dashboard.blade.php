@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Tu cuenta
+    Usuario
 @endsection
 
 

@@ -14,14 +14,39 @@
         <div class = "container mx-auto flex justify-between
         items-center">
             <h1 class = "text-3xl font-black">
-               DevStagram
+             <a href="http://localhost/22C/plan_riego/public/">  DevStagram </a>
             </h1>
                     
             @auth
-            <nav class = "flex gap-10 items-center" >
+            
+
+                    
+                    
+                    @if (auth()->user()->role == 'admin')
+                    <nav class = "flex gap-10 items-center" >
                      <a class= "font-bold  text-gray-600
-                     text-sm " href = "#" >
-                     Hola: <span class="font-normal"> {{ auth()->user()->username }}</span>
+                     text-sm " href = "{{ route('admin.index')}}" >
+                     welcome: 
+                     <span class="font-normal">{{ auth()->user()->role }} {{ auth()->user()->username }}</span>
+                     </a> 
+                    <a href="{{ route('Register')}}"> 
+                     <img class="flex gap-2 items-center w-10" src="{{asset('img/registerlogo.png')}}" alt="" >
+                     <p>Register</p>
+                    </a> 
+                    <form method="POST" action="{{ route('logout')}}">
+                            @csrf
+                     <button type="submit"> 
+                     <img class="flex gap-2 items-center w-10" src="{{asset('img/cerrar-sesion.png')}}" alt="" >
+                     <p>Logout</p>
+                     </button> 
+                     </form>
+                    </nav>
+                    @else
+                    <nav class = "flex gap-10 items-center" >
+                     <a class= "font-bold  text-gray-600
+                     text-sm " href = "{{route('posts.index')}}" >
+                     welcome: 
+                     <span class="font-normal">{{ auth()->user()->role }} {{ auth()->user()->username }}</span>
                      </a> 
                         <form method="POST" action="{{ route('logout')}}">
                             @csrf
@@ -30,14 +55,9 @@
                      <p>Logout</p>
                      </button> 
                      </form>
-
-                     <a href="{{ route('Register')}}"> 
-                     <img class="flex gap-2 items-center w-10" src="{{asset('img/registerlogo.png')}}" alt="" >
-                     <p>Register</p>
-                    </a> 
-                    </nav>
+                    @endif
                     @endauth
-                    
+
                     @guest
                     
                 <nav class = "flex gap-2 items-center" >

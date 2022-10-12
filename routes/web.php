@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +32,4 @@ Route::post('/logout',[LogoutController::class, 'store'])->name('logout');
 
 Route::get('/Inicio',[PostController::class , 'index'])->name('posts.index');
 
+Route::get('/admin',[AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');

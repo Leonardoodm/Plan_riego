@@ -89,7 +89,9 @@
                                  rounded-lg text-sm p-2 text-center">{{$message}}</p>
                             @enderror
                     </div>
-                  
+
+                    
+                    
                     
                       
                     <input 
@@ -98,6 +100,8 @@
                     class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer
                     uppercase font-bold w-full p-3 text-white rounded-lg"   
                     />
+
+                    
                 </form>
             </div>
         </div>      

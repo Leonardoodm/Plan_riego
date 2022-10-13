@@ -38,3 +38,5 @@ Route::get('/admin',[AdminController::class, 'index'])->middleware('auth.admin')
 Route::resource('users', '\App\Http\Controllers\UserController');
 
 Route::get('/vista',[VistaController::class,'index'])->name('datos.index');
+
+

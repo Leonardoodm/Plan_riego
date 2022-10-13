@@ -8,8 +8,7 @@
 
 
 <body>
-    <h1 class="my-4 text-center text-4xl">JABRA.com</h1>
-    <h2 class="mb-10 text-center text-xl">Carousel Example</h2>
+   
 
     <!-- Implement the carousel -->
     <div class="relative w-[600px] mx-auto">

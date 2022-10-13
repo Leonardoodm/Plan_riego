@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
+use App\Http\Controllers\VistaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,7 @@ Route::post('/logout',[LogoutController::class, 'store'])->name('logout');
 Route::get('/Inicio',[PostController::class , 'index'])->name('posts.index');
 
 Route::get('/admin',[AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
+
+Route::resource('users', '\App\Http\Controllers\UserController');
+
+Route::get('/vista',[VistaController::class,'index'])->name('datos.index');

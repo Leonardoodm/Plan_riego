@@ -18,11 +18,24 @@
             </h1>
                     
             @auth
-            
-
-                    
+          
                     
                     @if (auth()->user()->role == 'admin')
+
+                    <div class = "container mx-auto flex justify-between
+        items-center">
+            <div class=" sm:ml-8 sm:block">
+          <div class="flex space-x-8">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+
+            <a href="{{route('users.index')}}" class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Usuarios</a>
+
+            <a href="{{route('datos.index')}}" class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Datos</a>
+
+            <a href="#" class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Nosotros</a>
+          
+            </div>
+            </div>
                     <nav class = "flex gap-10 items-center" >
                      <a class= "font-bold  text-gray-600
                      text-sm " href = "{{ route('admin.index')}}" >
@@ -42,6 +55,21 @@
                      </form>
                     </nav>
                     @else
+
+                    <div class = "container mx-auto flex justify-between
+        items-center">
+            <div class="sm:ml-8 sm:block">
+          <div class="flex space-x-8">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+
+           
+
+            <a href="{{route('datos.index')}}" class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Datos</a>
+
+            <a href="#" class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">nosotros</a>
+          
+            </div>
+            </div>
                     <nav class = "flex gap-10 items-center" >
                      <a class= "font-bold  text-gray-600
                      text-sm " href = "{{route('posts.index')}}" >

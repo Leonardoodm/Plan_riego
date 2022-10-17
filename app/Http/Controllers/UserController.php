@@ -80,9 +80,9 @@ class UserController extends Controller
         $usuario->role = $request->get('role');
         
 
-        $usuario->save();
+        $usuario->update();
 
-        return redirect('/users');
+        return redirect('users');
 
         
     }

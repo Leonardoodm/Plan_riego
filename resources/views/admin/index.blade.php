@@ -1,4 +1,6 @@
 @extends('layouts.app')
  @section('titulo')
-     Admin
+    Servicios Destacados
  @endsection
+
+@section ('contenido')

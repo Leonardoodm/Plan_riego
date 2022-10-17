@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactanosController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\QuienesomosController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\RegisterController;
@@ -39,4 +41,6 @@ Route::resource('users', '\App\Http\Controllers\UserController');
 
 Route::get('/vista',[VistaController::class,'index'])->name('datos.index');
 
-
+//Datos Quienes somos y Contactanos
+Route::get('/Somos',[QuienesomosController::class, 'index'])->name('somos');
+Route::get('/Contactanos',[ContactanosController::class, 'index'])->name('contactanos');

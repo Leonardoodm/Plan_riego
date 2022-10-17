@@ -13,6 +13,6 @@ class VistaController extends Controller
 
     public function index(){
         
-        return view('Datos.Vista');
+        return view('Datos.Vista'); //datos.vista
     }
 }

@@ -24,7 +24,7 @@
           <div class="flex space-x-8">
             <a href="{{route('datos.index')}}" class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Datos</a>
 
-            <a href="#" class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Nosotros</a>
+            
                     
                     @if (auth()->user()->role == 'admin')
 
@@ -77,6 +77,9 @@
                     @endauth
 
                     @guest
+
+                    <a href="{{route('somos')}}" class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Nosotros</a>
+                    <a href="{{route('contactanos')}}" class="text-gray-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contactanos</a>
                     
                 <nav class = "flex gap-2 items-center" >
                      <a class= "font-bold uppercase text-gray-600

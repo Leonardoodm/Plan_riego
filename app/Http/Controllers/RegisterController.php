@@ -31,7 +31,7 @@ class RegisterController extends Controller
             'email' => 'required|unique:users|email|max:60',
             'role' => 'required',
             'password' => 'required|confirmed|min:8'
-
+                //select 
         ]);
             //Datos del registro requeridos
         User::create([

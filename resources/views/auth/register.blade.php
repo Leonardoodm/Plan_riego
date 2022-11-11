@@ -72,20 +72,18 @@
                         <label for="role" class="mb-2 block uppercase text-gray-500 font-bold">
                             Role 
                         </label>
-                        <input 
-                            id="role"                        
-                            name="role"
-                            type="text"
-                            placeholder="Tu Role Aignado"
-                            class="border p-3 w-full rounded-lg @error('role') border-red-500   
-                            @enderror"
-                            value="{{old('role')}}"
-                            />
+                            <select id="role" 
+                            name="role">
+                            <option value="admin">Administrador</option>
+                            <option value="user">Usuario</option>
+                            </select>
                             @error('role')
                                 <p class="bg-red-500 text-white my-2
                                  rounded-lg text-sm p-2 text-center">{{$message}}</p>
                             @enderror
-                    </div>
+                            
+                            
+                        </div>
                     <div class="mb-5">
                         <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">
                             Password 

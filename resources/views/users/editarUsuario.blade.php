@@ -11,7 +11,7 @@
         </div >
         
         <div class = "md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
-            <form action="users/{{$usuario}}" method="POST" novalidate>
+            <form action="{{route('users.update',$usuario->id)}}" method="POST" novalidate>
                  
                 @csrf
                 @method('PUT')
@@ -75,15 +75,12 @@
                         <label for="role" class="mb-2 block uppercase text-gray-500 font-bold">
                             Role 
                         </label>
-                        <input 
-                            id="role"                        
-                            name="role"
-                            type="text"
-                            placeholder="Tu Role Aignado"
-                            class="border p-3 w-full rounded-lg @error('role') border-red-500   
-                            @enderror"
-                            value="{{$usuario->role}}"
-                            />
+                        <select id="role" 
+                            name="role">
+                            <option value="{{$usuario->role}}">{{$usuario->role}}</option>
+                            <option value="admin">Administrador</option>
+                            <option value="user">Usuario</option>
+                            </select>
                             @error('role')
                                 <p class="bg-red-500 text-white my-2
                                  rounded-lg text-sm p-2 text-center">{{$message}}</p>

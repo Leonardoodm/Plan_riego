@@ -67,6 +67,7 @@
                 </div>
               </td>
 
+              <!--modal agregar para poder darle una alternativa!--->
               <form action="{{route('users.destroy',$usuario->id)}}" method="POST">
               <td class="px-6 py-4">
                 <a href="users/{{$usuario->id}}/edit">
